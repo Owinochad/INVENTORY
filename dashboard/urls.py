@@ -9,4 +9,5 @@ urlpatterns = [
     path('order/', views.order, name='dashboard-order'),
     path('products/delete/<int:pk>/', views.product_delete, name='dashboard-products-delete'),
     path('products/update/<int:pk>/', views.product_update, name='dashboard-products-update'),
+    # path('daraja/stk_push', views.stk_push_callback, name= 'stk_push_callback'),
 ]

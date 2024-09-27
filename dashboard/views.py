@@ -5,6 +5,7 @@ from.models import Product, Order
 from. forms import ProductForm, OrderForm
 from django.contrib.auth.models import User
 from django.contrib import messages
+from django_daraja.mpesa.core import MpesaClient
 
 # Create your views here.
 
@@ -128,3 +129,20 @@ def product_update(request, pk):
         'form': form,
     }
     return render(request,'dashboard/product_update.html', context)
+
+
+# def index(request):
+#     cl = MpesaClient()
+#     # Use a Safaricom phone number that you have access to, for you to be able to view the prompt.
+#     phone_number = '0794877417'
+#     amount = 1
+#     account_reference = 'reference'
+#     transaction_desc = 'Description'
+#     callback_url = 'https://darajambili.herokuapp.com/express-payment'
+#     response = cl.stk_push(phone_number, amount, account_reference, transaction_desc, callback_url)
+#     return HttpResponse(response)
+
+# def stk_push_callback(request):
+#         data = request.body
+        
+#         return HttpResponse("STK Push in Django👋")
